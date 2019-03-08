@@ -37,7 +37,6 @@ const appRoutes: Routes = [
     BrowserAnimationsModule
   ],
   providers: [],
-  //specific for the highest component in hierarchy
   bootstrap: [AppComponent]
 })
 export class AppModule { }

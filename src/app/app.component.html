@@ -4,15 +4,27 @@
     Welcome to {{ title }}!
   </h1>
 </div>
-<nav>
-  <button mat-button routerLink="/list" 
-          routerLinkActive="active" 
-          style="background-color"> 
-          List 
+
+
+
+<nav style="margin: 10px;">
+  <button 
+    style="margin: 10px;"
+    mat-raised-button color="primary" 
+    matBadgePosition="before" 
+    matBadgeColor="accent"
+    routerLink="/list" 
+    routerLinkActive="active">
+  List
   </button>
-  <button mat-button routerLink="/add-new" 
-          routerLinkActive="active"> 
-          + New 
+  <button 
+    style="margin: 10px;"
+    mat-raised-button color="primary" 
+    matBadgePosition="before" 
+    matBadgeColor="accent"
+    routerLink="/add-new" 
+    routerLinkActive="active">
+  + New 
   </button>
 </nav>
-<router-outlet></router-outlet>
+<router-outlet style="margin: 10px;"></router-outlet>
