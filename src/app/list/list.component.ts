@@ -29,7 +29,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
 })
 export class ListComponent implements OnInit {
 
-  items = [1, 2, 3, 4, 6, 7]
+  items = [1, 2, 3, 4, 6, 7];
   displayedColumns: string[] = ['name', 'description', 'triggerName', 'interimTriggerName', 'effectiveDeadlineIntro', 'empty'];
   dataSource = new MatTableDataSource(ELEMENT_DATA);
 
@@ -39,4 +39,9 @@ export class ListComponent implements OnInit {
     this.dataSource.sort = this.sort;
   }
 
+  public popView = (event) => {
+    const whatComes: string = event.target.innerHTML;
+
+    alert(`We got ${whatComes} coming!`);
+  }
 }

@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { AppMaterialModule } from './app.material.module';
 import { ListComponent } from './list/list.component';
 import { AddNewComponent } from './add-new/add-new.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 const appRoutes: Routes = [
   { path: 'list', component: ListComponent },
@@ -16,13 +17,13 @@ const appRoutes: Routes = [
 
 
 @NgModule({
-  //what belongs to this module
+  // what belongs to this module
   declarations: [
     AppComponent,
     ListComponent,
     AddNewComponent,
   ],
-  //other modules we want to use inside this component
+  // other modules we want to use inside this component
   imports: [
     RouterModule.forRoot(
       appRoutes,
@@ -30,7 +31,9 @@ const appRoutes: Routes = [
     ),
     BrowserModule,
     AppMaterialModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   exports: [
     AppMaterialModule,

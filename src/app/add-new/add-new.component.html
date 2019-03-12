@@ -1,3 +1,132 @@
 <mat-card>
-  dong
+  <h2></h2>
+  <!--  name  -->
+  <form class="example-form">
+
+  <p>
+    <mat-form-field appearance="outline">
+      <input matInput placeholder="Name *" [formControl]="nameFormControl"
+            [errorStateMatcher]="matcher">
+      <mat-error *ngIf="nameFormControl.hasError('required')">
+        Name is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+  </p>
+  <!--  trigger name -->
+  <p>
+      <mat-form-field>
+        <input matInput placeholder="Trigger name *" [formControl]="triggerNameFormControl"
+              [errorStateMatcher]="matcher">
+        <mat-error *ngIf="triggerNameFormControl.hasError('required')">
+          Trigger name is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+  </p>
+  <!-- trigger date -->
+  <p>
+    <mat-card>
+      <p>Trigger Date Known</p>
+      <mat-form-field>
+        <mat-select placeholder="Choose an option" [formControl]="triggerDateFormControl">
+          <mat-option value="option1">Option 1</mat-option>
+          <mat-option value="option2">Option 2 </mat-option>
+          <mat-option value="option3">Option 3</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </mat-card>
+  </p>
+  <!-- interim trigger -->
+  <p>
+    <mat-card>
+      <p>
+        <mat-checkbox [formControl]="disableSelect">Is interim trigger?</mat-checkbox>
+      </p>
+      <mat-form-field>
+        <mat-select placeholder="Choose an option" [disabled]="disableSelect.value">
+          <mat-option value="option1">Option 1</mat-option>
+          <mat-option value="option2" disabled>Option 2 (disabled)</mat-option>
+          <mat-option value="option3">Option 3</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </mat-card>
+  </p>
+<!-- constraint name -->
+  <p>
+      <mat-form-field>
+        <input matInput placeholder="Constraint name *" [formControl]="constraintNameFormControl"
+              [errorStateMatcher]="matcher">
+        <mat-error *ngIf="constraintNameFormControl.hasError('required')">
+          Trigger name is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+  </p>
+  <!-- constraint name value  -->
+  <p>
+      <mat-card>
+        <p>Constraint Value Known</p>
+        <mat-form-field>
+          <mat-select placeholder="Choose an option" [formControl]="triggerDateFormControl">
+            <mat-option value="option1">Option 1</mat-option>
+            <mat-option value="option2">Option 2 </mat-option>
+            <mat-option value="option3">Option 3</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </mat-card>
+    </p>
+  <!-- effective deadline info -->
+  <p>
+      <mat-form-field>
+        <input matInput placeholder="Effective Deadline Info *" [formControl]="constraintNameFormControl"
+              [errorStateMatcher]="matcher">
+        <mat-error *ngIf="constraintNameFormControl.hasError('required')">
+          Trigger name is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+  </p>
+  <!-- related processing basis reference type -->
+  <p>
+      <mat-form-field>
+        <input matInput placeholder="Related Processing Basis Reference Type" [formControl]="constraintNameFormControl"
+              [errorStateMatcher]="matcher">
+        <mat-error *ngIf="constraintNameFormControl.hasError('required')">
+          Trigger name is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+  </p>
+  <!-- checkboxes -->
+  <p>
+    <mat-card>
+        <section class="example-section">
+            <mat-checkbox class="example-margin" [(ngModel)]="checked">Checked</mat-checkbox>
+            <mat-checkbox class="example-margin" [(ngModel)]="indeterminate">Indeterminate</mat-checkbox>
+            <mat-checkbox class="example-margin" [(ngModel)]="checked2">Checked2</mat-checkbox>
+            <mat-checkbox class="example-margin" [(ngModel)]="indeterminate2">Indeterminate2</mat-checkbox>
+        </section>
+    </mat-card>
+  </p>
+  <!-- descriptions -->
+  <p>
+    <mat-form-field>
+      <textarea matInput placeholder="Description"></textarea>
+    </mat-form-field>
+  </p>
+  <!-- close and save -->
+  <p>
+
+      <button mat-raised-button color="primary">
+          <i class="material-icons">
+              close
+          </i> Close
+      </button>
+
+
+        <button mat-raised-button color="accent" class="m5">
+          <i class="material-icons">
+              save
+          </i> Save
+        </button>
+  </p>
+  </form>
 </mat-card>
+
+
