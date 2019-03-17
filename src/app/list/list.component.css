@@ -10,3 +10,8 @@ table {
 .m5 {
     margin: 10px;
 }
+
+.min-height-width {
+  min-width: 100px;
+  min-height: 100px;
+}

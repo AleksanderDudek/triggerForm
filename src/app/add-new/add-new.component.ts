@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, Validators, FormGroupDirective, NgForm } from '@angular/forms';
+import { FormControl, Validators, FormGroupDirective, NgForm, FormGroup, FormBuilder } from '@angular/forms';
 import {ErrorStateMatcher} from '@angular/material/core';
 
 /** Error when invalid control is dirty, touched, or submitted. */
@@ -16,22 +16,28 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
 })
 export class AddNewComponent implements OnInit {
 
-  nameFormControl = new FormControl('', [
+  public nameFormControl = new FormControl('', [
     Validators.required
   ]);
 
-  triggerNameFormControl = new FormControl('', [
+  public triggerNameFormControl = new FormControl('', [
     Validators.required
   ]);
 
-  triggerDateFormControl = new FormControl('', [
+  public triggerDateFormControl = new FormControl('', [
     Validators.required
   ]);
 
   matcher = new MyErrorStateMatcher();
 
-  constructor() { }
+  options: FormGroup;
 
+  constructor(fb: FormBuilder) {
+    this.options = fb.group({
+      hideRequired: false,
+      floatLabel: 'auto',
+    });
+  }
   ngOnInit() {
   }
 }

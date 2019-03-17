@@ -9,9 +9,13 @@ import { ListComponent } from './list/list.component';
 import { AddNewComponent } from './add-new/add-new.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+import { HttpModule, JsonpModule } from '@angular/http';
+
 const appRoutes: Routes = [
   { path: 'list', component: ListComponent },
   { path: 'add-new', component: AddNewComponent },
+  { path: '',   redirectTo: '/list', pathMatch: 'full' },
+  { path: '**', redirectTo: '/list'}
 ];
 
 
@@ -25,6 +29,8 @@ const appRoutes: Routes = [
   ],
   // other modules we want to use inside this component
   imports: [
+    HttpModule,
+    JsonpModule,
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: true } // <-- debugging purposes only
